@@ -12,9 +12,9 @@ A desktop 2048 game with a learned AI, plus a separate screen assistant that rea
 
 Results from 100 games of automatic play at depth 1:
 
-| Mean score | Median | Reached 4096 | Reached 8192 |
-|---:|---:|---:|---:|
-| **121,442** | **130,266** | **99%** | **56%** |
+| Mean score | Median | Reached 2048 | Reached 4096 | Reached 8192 |
+|---:|---:|---:|---:|---:|
+| **121,442** | **130,266** | **100%** | **99%** | **56%** |
 
 ### AI assistant
 
@@ -29,6 +29,20 @@ The cross layout shows the model's relative preference for each direction. The a
 - **Screen assistant:** select a visible board, inspect recognized tiles and receive live recommendations. It never sends game input.
 - English and Chinese interfaces. All inference runs locally.
 
+## Controls
+
+Use arrow keys or WASD to play; R or ↻ restarts. `?` opens help and `中 / EN` switches language. The AI panel provides recommendations, one step, auto and stop. Manual input pauses automatic play. Reaching 2048 pauses auto once and still allows continued play.
+
+For the screen assistant, select the entire outer edge of the board. Live polling starts automatically. Keep the board visible and place the assistant beside it. Re-select after scrolling, moving the browser or changing zoom. Verify the recognized preview; uncertain recognition waits rather than inventing a move. See [screen assistant usage](docs/screen-assistant.md).
+
+Recommendation percentages express relative model preferences, not win probabilities.
+
+## Model and algorithm
+
+A 206,849-parameter Transformer evaluates afterstates; expectimax accounts for random tile spawns. See [model and search details](docs/model-and-algorithm.md). The runtime uses `models/latest/best.pt`; OCR uses the English PP-OCRv4 ONNX recognizer in `assets/ocr/`.
+
+Training datasets, optimizer state, previous checkpoints and development archives are not part of the public distribution. The supplied model supports inference; this repository is not a complete training-reproduction package.
+
 ## Download and run
 
 Download the Windows CPU version from [Releases](https://github.com/tonghua-lin/Alpha2048/releases). Download and extract the entire ZIP, then open:
@@ -36,7 +50,7 @@ Download the Windows CPU version from [Releases](https://github.com/tonghua-lin/
 - `2048.exe` — game and game AI.
 - `ScreenAssistant.exe` — external-board recommendations.
 
-Keep the `_internal` directory beside both executables. The CPU build needs no Python or CUDA installation; its GPU option reports unavailable.
+Keep the `_internal` directory beside both executables. The packaged application uses CPU by default and needs no Python or CUDA installation. GPU requires CUDA; run from source and test it on your system.
 
 ## Run from source
 
@@ -54,21 +68,7 @@ py -3.12 -m venv .venv
 
 Run these commands from the repository root. Keep the repository assets alongside the source. For manual play without AI/OCR, installing `-e .` is enough. The game loads its AI runtime only when requested.
 
-Source installations can use CUDA-enabled PyTorch with a compatible NVIDIA GPU. The portable release is CPU-only. OCR always uses CPU.
-
-## Controls
-
-Use arrow keys or WASD to play; R or ↻ restarts. `?` opens help and `中 / EN` switches language. The AI panel provides recommendations, one step, auto and stop. Manual input pauses automatic play. Reaching 2048 pauses auto once and still allows continued play.
-
-For the screen assistant, select the entire outer edge of the board. Live polling starts automatically. Keep the board visible and place the assistant beside it. Re-select after scrolling, moving the browser or changing zoom. Verify the recognized preview; uncertain recognition waits rather than inventing a move. See [screen assistant usage](docs/screen-assistant.md).
-
-Recommendation percentages express relative model preferences, not win probabilities.
-
-## Model and algorithm
-
-A 206,849-parameter Transformer evaluates afterstates; expectimax accounts for random tile spawns. See [model and search details](docs/model-and-algorithm.md). The runtime uses `models/latest/best.pt`; OCR uses the English PP-OCRv4 ONNX recognizer in `assets/ocr/`.
-
-Training datasets, optimizer state, previous checkpoints and development archives are not part of the public distribution. The supplied model supports inference; this repository is not a complete training-reproduction package.
+The packaged application uses CPU by default. GPU requires CUDA; install CUDA-enabled PyTorch and test it from source on your system. OCR always uses CPU.
 
 ## Tests
 
