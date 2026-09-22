@@ -53,12 +53,19 @@ AI 助手以十字布局显示四个方向的相对推荐度，支持 depth 0 / 
 
 ## 下载与运行
 
-在 [Releases](https://github.com/tonghua-lin/Alpha2048/releases) 下载 Windows CPU 版。完整解压 ZIP 后运行：
+在 [Releases](https://github.com/tonghua-lin/Alpha2048/releases) 下载对应的 CPU 版本：
+
+- Windows x64：`Alpha2048-CPU-Windows-x64.zip`
+- Apple Silicon Mac：`Alpha2048-CPU-macOS-Apple-Silicon.zip`
+
+完整解压 ZIP 后运行：
 
 - `2048.exe`：游戏及游戏内 AI。
 - `ScreenAssistant.exe`：外部棋盘识别和推荐。
+- `Alpha2048.app`：macOS 游戏及游戏内 AI。
+- `Alpha2048ScreenAssistant.app`：macOS 外部棋盘识别和推荐。
 
-请保留两个 EXE 旁边的 `_internal` 文件夹。默认打包程序使用 CPU，不需要安装 Python 或 CUDA。GPU 需要 CUDA，请用源码自行测试。
+Windows 请保留两个 EXE 旁边的 `_internal` 文件夹。macOS 首次启动时如被拦截，请在 Finder 中右键应用并选择“打开”；屏幕助手还需授予屏幕录制权限。默认打包程序使用 CPU，不需要安装 Python 或 CUDA。GPU 需要 CUDA，请用源码自行测试。
 
 ## 从源码运行
 

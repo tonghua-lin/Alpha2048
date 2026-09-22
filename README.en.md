@@ -53,12 +53,19 @@ Training datasets, optimizer state, previous checkpoints and development archive
 
 ## Download and run
 
-Download the Windows CPU version from [Releases](https://github.com/tonghua-lin/Alpha2048/releases). Download and extract the entire ZIP, then open:
+Download the matching CPU build from [Releases](https://github.com/tonghua-lin/Alpha2048/releases):
+
+- Windows x64: `Alpha2048-CPU-Windows-x64.zip`
+- Apple Silicon Mac: `Alpha2048-CPU-macOS-Apple-Silicon.zip`
+
+Extract the entire ZIP, then open:
 
 - `2048.exe` — game and game AI.
 - `ScreenAssistant.exe` — external-board recommendations.
+- `Alpha2048.app` — macOS game and game AI.
+- `Alpha2048ScreenAssistant.app` — macOS external-board recommendations.
 
-Keep the `_internal` directory beside both executables. The packaged application uses CPU by default and needs no Python or CUDA installation. GPU requires CUDA; run from source and test it on your system.
+On Windows, keep `_internal` beside both executables. If macOS blocks the first launch, right-click the app in Finder and choose **Open**; the screen assistant also needs Screen Recording permission. Packaged applications use CPU by default and need no Python or CUDA installation. GPU requires CUDA; run from source and test it on your system.
 
 ## Run from source
 
