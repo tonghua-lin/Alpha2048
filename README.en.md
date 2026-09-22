@@ -4,6 +4,21 @@
 
 A desktop 2048 game with a learned AI, plus a separate screen assistant that reads an external 4×4 board and recommends moves.
 
+<p align="center">
+  <img src="docs/assets/gameplay-demo.gif" width="640" alt="Alpha2048 gameplay demo">
+</p>
+
+## 100-game performance
+
+**A previous model completed 100 games at depth 1 with a mean score of 121,442 and reached 8192 in 56% of games. Its mean score was 57.7% above the historical mixed4 baseline.**
+
+| Model | Mean score | Median | Reached 4096 | Reached 8192 |
+|---|---:|---:|---:|---:|
+| Previous learned model | 121,442 | 130,266 | 99% | 56% |
+| Historical mixed4 baseline | 77,020 | 78,414 | 80% | 18% |
+
+This table uses the previous model's complete 100-game record because the current release model has only a 19-game interim evaluation. The two rows used different random seeds, and the mixed4 baseline overlaps the early training corpus, so this is a behavioral comparison rather than a held-out or paired-seed evaluation. See the [100-game evaluation record](docs/benchmark-100-games.md) for the protocol and full statistics.
+
 - **Game:** keyboard play, sliding animations, score tracking, and a 2048 celebration.
 - **Game AI:** recommendations, single-step execution and automatic play; search depths 0/1/2.
 - **Screen assistant:** select a visible board, inspect recognized tiles and receive live recommendations. It never sends game input.
@@ -43,6 +58,14 @@ Use arrow keys or WASD to play; R or ↻ restarts. `?` opens help and `中 / EN`
 For the screen assistant, select the entire outer edge of the board. Live polling starts automatically. Keep the board visible and place the assistant beside it. Re-select after scrolling, moving the browser or changing zoom. Verify the recognized preview; uncertain recognition waits rather than inventing a move. See [screen assistant usage](docs/screen-assistant.md).
 
 Recommendation percentages express relative model preferences, not win probabilities.
+
+## In-game AI
+
+<p align="center">
+  <img src="docs/assets/ai-assistant.png" width="420" alt="In-game AI assistant window">
+</p>
+
+The cross layout shows the model's relative preference for each direction. The assistant supports depths 0 / 1 / 2, one-step execution and automatic play. CPU works out of the box; source installations may also select GPU with a compatible NVIDIA card and CUDA-enabled PyTorch.
 
 ## Model and algorithm
 
