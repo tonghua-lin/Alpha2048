@@ -50,7 +50,8 @@ def main():
     if len(sys.argv)==3 and sys.argv[1]=='--self-test':
         return self_test(Path(sys.argv[2]).resolve())
     try:
-        if Path(sys.executable).stem.lower()=='screenassistant' or '--screen' in sys.argv:
+        executable = Path(sys.executable).stem.lower().replace(' ', '').replace('-', '')
+        if 'screenassistant' in executable or '--screen' in sys.argv:
             from alpha2048.screen_assistant import main as start
         else:
             from alpha2048.play import main as start

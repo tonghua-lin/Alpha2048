@@ -14,8 +14,11 @@ def resource_path(relative):
 
 def configure_logging(name):
     logger = logging.getLogger()
-    for base in (Path(os.environ.get('LOCALAPPDATA') or Path.home()) / 'Alpha2048' / 'logs',
-                 Path(tempfile.gettempdir()) / 'Alpha2048' / 'logs'):
+    if sys.platform == 'darwin':
+        primary = Path.home() / 'Library' / 'Logs' / 'Alpha2048'
+    else:
+        primary = Path(os.environ.get('LOCALAPPDATA') or Path.home()) / 'Alpha2048' / 'logs'
+    for base in (primary, Path(tempfile.gettempdir()) / 'Alpha2048' / 'logs'):
         try:
             base.mkdir(parents=True, exist_ok=True)
             path = base / f'{name}.log'
