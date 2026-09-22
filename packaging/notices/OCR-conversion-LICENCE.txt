@@ -1,0 +1,34 @@
+MODEL REDISTRIBUTION DISCLAIMER LICENSE (RDL)
+
+TERMS AND CONDITIONS:
+
+1. Ownership  
+All intellectual property rights and related rights to the Work remain exclusively with the original copyright holder(s). The Maintainer neither claims nor acquires any rights through redistribution.
+
+2. Source Attribution Requirement  
+The Maintainer must prominently display the original source information (including but not limited to publication platform, author identifiers, and original release URL) in the repository's primary documentation (e.g., README file).
+
+3. License Inheritance  
+Use, modification, and distribution of the Work shall be governed entirely by the license terms accompanying its original release. Any original license file takes precedence over this disclaimer.
+
+4. User Obligations  
+Users must:  
+- Preserve all original copyright notices and license files  
+- Comply with the original license terms  
+- Attribute the Work to its original source when redistributing
+
+5. Disclaimer of Liability  
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTIES OF ANY KIND. THE MAINTAINER EXPLICITLY DISCLAIMS LIABILITY FOR:  
+- Accuracy or completeness of the Work  
+- Intellectual property infringement  
+- Fitness for any purpose  
+- Any damages arising from use
+
+6. Preservation Principle  
+The Maintainer shall not:  
+- Modify original model files  
+- Remove original licensing information  
+- Claim authorship or ownership
+
+7. Takedown Protocol  
+Original rights holders may request content removal by contacting the Maintainer through repository-associated channels. Compliance will occur within 5 business days upon verification.

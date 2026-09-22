@@ -1,0 +1,26 @@
+{
+  "format": "PyTorch weights_only checkpoint",
+  "model_type": "transformer",
+  "model_config": {
+    "vocab_size": 32,
+    "width": 64,
+    "layers": 4,
+    "heads": 4,
+    "feedforward": 256
+  },
+  "parameters": 206849,
+  "sha256": "3bf5463091b93c32aedb7284443686dd57dc0a5cf283007bda8ecdebea5108a5",
+  "bytes": 844387,
+  "contents": [
+    "model_type",
+    "model_config",
+    "model"
+  ],
+  "evaluation": {
+    "games": 19,
+    "status": "partial development evaluation",
+    "mean_score": 142136.84210526315,
+    "reach_8192_fraction": 0.8421052631578947
+  },
+  "training_data_included": false
+}

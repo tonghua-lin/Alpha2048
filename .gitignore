@@ -1,0 +1,39 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.venv-release-cpu/
+.tmp/
+build/
+dist/
+runs/
+
+# Local research history, reports and machine-specific launchers
+/archive/
+/benchmarks/
+/reports/
+/AGENT.md
+/*.lnk
+/docs/prepackage-review.md
+/.local/
+
+# Only the public inference artifact belongs in the repository.
+/models/*
+!/models/latest/
+/models/latest/*
+!/models/latest/best.pt
+!/models/latest/README.md
+!/models/latest/manifest.json
+
+# Credentials and local tooling configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.codex/
+.agents/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

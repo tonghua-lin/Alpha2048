@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha2048"
+version = "0.1.0"
+description = "A reusable 2048 environment and a minimal desktop interface"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+ai = ["torch>=2.6"]
+training = ["torch>=2.6"]
+screen = ["torch>=2.6", "Pillow>=10", "onnxruntime>=1.20"]
+
+[project.scripts]
+alpha2048 = "alpha2048.play:main"
+alpha2048-screen = "alpha2048.screen_assistant:main"
+
+[tool.setuptools.packages.find]
+include = ["alpha2048*"]
