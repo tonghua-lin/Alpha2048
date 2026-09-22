@@ -29,6 +29,14 @@ The cross layout shows the model's relative preference for each direction. The a
 - **Screen assistant:** select a visible board, inspect recognized tiles and receive live recommendations. It never sends game input.
 - English and Chinese interfaces. All inference runs locally.
 
+## Screen assistant
+
+<p align="center">
+  <img src="docs/assets/screen-assistant.png" width="900" alt="Alpha2048 screen assistant recognizing an external board and providing live recommendations">
+</p>
+
+Select an external 2048 board and the screen assistant recognizes its tiles and continuously updates its move recommendation. It provides advice without controlling the external game.
+
 ## Controls
 
 Use arrow keys or WASD to play; R or ↻ restarts. `?` opens help and `中 / EN` switches language. The AI panel provides recommendations, one step, auto and stop. Manual input pauses automatic play. Reaching 2048 pauses auto once and still allows continued play.
